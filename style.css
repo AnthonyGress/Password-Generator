@@ -98,10 +98,10 @@ h2 {
   display: flex;
   justify-content: center;
   margin-top: -2rem;
-  z-index: 1;
 }
 
 .btn-md {
+  display: inline-block;
   text-align: center;
   cursor: pointer;
   padding: 8px;
