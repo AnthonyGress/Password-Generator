@@ -92,37 +92,36 @@ function altGeneratePW (){
     alert("ERROR Password must LESS THAN 128 characters in length");
     return;
   }
-  
-  console.log(passwordLen);
+
 
   // check to see if special characters checkbox is checked
   var hasSpecialChars = document.getElementById("SpecialChars");
-  console.log(hasSpecialChars);
+ 
   // if checked, add to included characters array
   if (hasSpecialChars.checked == true){
     var included = included.concat(specialChars);
-    console.log(included);
+
   }
   // check to see if numbers checkbox is checked
   var hasNumbers = document.getElementById("Numbers");
   // if checked, add to included characters array
   if (hasNumbers.checked == true){
     var included = included.concat(numbers);
-    console.log(included);
+
   }
   // check to see if numbers checkbox is checked
   var hasLowerCase = document.getElementById("Lowercase");
   // if checked, add to included characters array
   if (hasLowerCase.checked == true){
     var included = included.concat(lowerCase);
-    console.log(included);
+  
   }
   // check to see if numbers checkbox is checked
   var hasUpperCase = document.getElementById("Uppercase");
   // if checked, add to included characters array
   if (hasUpperCase.checked == true){
     var included = included.concat(upperCase);
-    console.log(included);
+  
   }
   // if none of the character sets are selected, return error
   if (hasSpecialChars.checked != true && hasNumbers.checked != true && hasLowerCase.checked != true && hasUpperCase.checked != true) {
@@ -134,14 +133,14 @@ function altGeneratePW (){
   for (let i = 0; i < passwordLen; i++) {
     // randomly select an index from the array
     var random = Math.floor(Math.random() * (included.length));
-    console.log(random);
+    
     // get value of the randomly chosen character and store it
     var chosenChar = included[random];
-    console.log(chosenChar);
+  
     // add the randomly chosen character from the included array to the generated password
     generatedPassword.push(chosenChar);
   }
-  console.log(generatedPassword);
+ 
 }
 
 // Assignment Code
@@ -150,14 +149,16 @@ var generateBtn = document.querySelector("#generate");
 // Write password to the #password input
 function writePassword() {
   // first clear the text field on screen
-  passwordText.value = "";
+  generatedPassword = [];
   // call the generate function
   altGeneratePW();
   // remove commas from array x,y,z to xyz
   var password = generatedPassword.join("");
+  
   //write generated password to page
+  console.log(password);
   passwordText.value = password;
-
+  
 }
 
 // Add event listener to generate button
