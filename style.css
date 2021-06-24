@@ -31,8 +31,9 @@ body {
 
 header {
   text-align: center;
-  padding: 20px;
+  padding: 5px;
   padding-top: 0px;
+  margin-top: -1rem;
   color: hsl(206, 17%, 28%);
 }
 
@@ -133,6 +134,21 @@ input:checked + .slider:before {
 
 /* end slider css */
 
+input {
+  border-radius: 6px;
+  border-style: solid;
+  height: 2rem;
+  width: 6rem;
+  margin-top: 1rem;
+  font-size: 1.5rem;
+}
+
+#inputLen {
+  margin-left: auto;
+  margin-top: 1.25rem;
+  margin-bottom: 1rem;
+}
+
 .card-footer {
   text-align: center;
 }
@@ -161,7 +177,7 @@ input:checked + .slider:before {
   display: inline-block;
   font-size: 22px;
   line-height: 22px;
-  margin: 16px 16px 16px 20px;
+  margin: 28px 16px 16px 20px;
   padding: 14px 34px;
   text-align: center;
   cursor: pointer;
@@ -198,6 +214,10 @@ button[disabled] {
 }
 
 @media (max-width: 690px) {
+  h2 {
+    text-align: center;
+  }
+
   .btn {
     font-size: 1rem;
     margin: 16px 0px 0px 0px;
@@ -217,11 +237,5 @@ button[disabled] {
 
   #password {
     font-size: 1rem;
-  }
-}
-
-@media (max-width: 500px) {
-  .btn {
-    font-size: 0.8rem;
   }
 }

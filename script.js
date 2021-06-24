@@ -1,3 +1,8 @@
+// add validation for no boxes checked/no prompts selected
+// default check box
+// text input area for length
+
+
 var specialChars = [ "@", "%", "+", "\\", "/", "'", "!", "#", "$", "^", "?", ":", ",", ")", "(", "}", "{", "]", "[", "~", "-", "_", ".", ];
 // Array of numeric characters to be included in password
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
@@ -66,20 +71,31 @@ function generatePW() {
 // checkbox format instead of prompts
 function altGeneratePW (){
   var included = [];
+  // store value from html text box for password len
+  var passwordLen = document.getElementById("passLen").value;
+  // convert text to number
+  passwordLen = Number(passwordLen);
 
-  var passwordLen = prompt("Enter length of password");
-  if (passwordLen < 5){
-    alert("Password must be AT LEAST 5 characters in length.")
+  // check if password len is a number
+  if (isNaN(passwordLen)){
+    alert("ERROR Password length must be a NUMBER");
+    return;
+  }
+  // check to see if password len is between 5-128
+  else if (passwordLen < 5){
+    alert("ERROR Password must be AT LEAST 5 characters in length");
     return;
   }
   else if (passwordLen > 128){
-    alert("Password must LESS THAN 128 characters in length.")
+    alert("ERROR Password must LESS THAN 128 characters in length");
     return;
   }
+  
   console.log(passwordLen);
 
   // check to see if special characters checkbox is checked
   var hasSpecialChars = document.getElementById("SpecialChars");
+  console.log(hasSpecialChars);
   // if checked, add to included characters array
   if (hasSpecialChars.checked == true){
     var included = included.concat(specialChars);
@@ -106,6 +122,9 @@ function altGeneratePW (){
     var included = included.concat(upperCase);
     console.log(included);
   }
+  // if () {
+  //   alert("ERROR You must check at least 1 box")
+  // }
 
   // loop through included characters array *passwordLen* number of times
   for (let i = 0; i < passwordLen; i++) {

@@ -24,15 +24,20 @@
             aria-label="Generated Password"
           ></textarea>
         </div>
+        
         <div class="card-footer">
+          <div class="flex-container">
+            Special Characters <label class="switch"><input type="checkbox" name="SpecialChars" id="SpecialChars"><span class="slider round"></span></label>
+            Numbers <label class="switch"><input type="checkbox" name="Numbers" id="Numbers"><span class="slider round"></span></label>
+            Lowercase <label class="switch"><input type="checkbox" name="Lowercase" id="Lowercase"><span class="slider round"></span></label>
+            Uppercase <label class="switch"><input type="checkbox" name="Uppercase" id="Uppercase"><span class="slider round"></span></label>
+          </div>
+          <div id="inputLen">
+            Password Length (5-128) <br><input type="text" id="passLen">
+          </div>
           <button id="generate" class="btn">Generate Password</button>
         </div>
-        <div class="flex-container">
-          Special Characters <label class="switch"><input type="checkbox" name="SpecialChars" id="SpecialChars"><span class="slider round"></span></label>
-          Numbers <label class="switch"><input type="checkbox" name="Numbers" id="Numbers"><span class="slider round"></span></label>
-          Lowercase <label class="switch"><input type="checkbox" name="Lowercase" id="Lowercase"><span class="slider round"></span></label>
-          Uppercase <label class="switch"><input type="checkbox" name="Uppercase" id="Uppercase"><span class="slider round"></span></label>
-        </div>
+
       </div>
     </div>
     <script src="script.js"></script>
