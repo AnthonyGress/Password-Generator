@@ -122,9 +122,10 @@ function altGeneratePW (){
     var included = included.concat(upperCase);
     console.log(included);
   }
-  // if () {
-  //   alert("ERROR You must check at least 1 box")
-  // }
+  if (hasSpecialChars.checked != true && hasNumbers.checked != true && hasLowerCase.checked != true && hasUpperCase.checked != true) {
+    alert("ERROR You must check at least 1 box");
+    return;
+  }
 
   // loop through included characters array *passwordLen* number of times
   for (let i = 0; i < passwordLen; i++) {
