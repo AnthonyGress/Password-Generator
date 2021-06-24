@@ -1,3 +1,6 @@
+// add dropdown 5-128?
+// add default placeholder in text input or dropdown
+// add icon
 var specialChars = [ "@", "%", "+", "\\", "/", "'", "!", "#", "$", "^", "?", ":", ",", ")", "(", "}", "{", "]", "[", "~", "-", "_", ".", ];
 // Array of numeric characters to be included in password
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
@@ -144,6 +147,7 @@ function altGeneratePW (){
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
+var copyBtn = document.querySelector("#copy");
 
 // Write password to the #password input
 function writePassword() {
@@ -160,5 +164,20 @@ function writePassword() {
   
 }
 
+// assign copy function to button
+function copyPW (){
+  var copyText = document.getElementById("password");
+  /* Select the text field */
+  copyText.select();
+  copyText.setSelectionRange(0, 99999); /* For mobile devices */
+  // copy text
+  document.execCommand("copy");
+    /* Alert the copied text */
+    alert("Copied the password: " + copyText.value);
+}
+
 // Add event listener to generate button
 generateBtn.addEventListener("click", writePassword);
+copyBtn.addEventListener("click", copyPW);
+
+

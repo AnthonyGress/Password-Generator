@@ -24,6 +24,7 @@
             placeholder="Your Secure Password"
             aria-label="Generated Password"
           ></textarea>
+          <span class="btn-wrapper"><button id="copy" class="btn-md">Copy Password</button></span>
         </div>
         
         <div class="card-footer">
@@ -34,7 +35,7 @@
             Uppercase <label class="switch"><input type="checkbox" name="Uppercase" id="Uppercase" checked><span class="slider round"></span></label>
           </div>
           <div id="inputLen">
-            Password Length<br><input type="text" id="passLen" placeholder="Enter a Number 5-128">
+            Password Length (5 - 128)<br><input type="text" id="passLen" placeholder="Enter a number 5-128" value="12">
           </div>
           <button id="generate" class="btn">Generate Password</button>
         </div>
