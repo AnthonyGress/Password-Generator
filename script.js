@@ -1,7 +1,4 @@
-// add validation for no boxes checked/no prompts selected
 // default check box
-// text input area for length
-
 
 var specialChars = [ "@", "%", "+", "\\", "/", "'", "!", "#", "$", "^", "?", ":", ",", ")", "(", "}", "{", "]", "[", "~", "-", "_", ".", ];
 // Array of numeric characters to be included in password
@@ -70,7 +67,9 @@ function generatePW() {
 
 // checkbox format instead of prompts
 function altGeneratePW (){
+  // create blank array of included char types
   var included = [];
+  var inputBorder = document.querySelector("#passLen");
   // store value from html text box for password len
   var passwordLen = document.getElementById("passLen").value;
   // convert text to number
@@ -78,15 +77,18 @@ function altGeneratePW (){
 
   // check if password len is a number
   if (isNaN(passwordLen)){
+    inputBorder.style.borderColor = "red";
     alert("ERROR Password length must be a NUMBER");
     return;
   }
   // check to see if password len is between 5-128
   else if (passwordLen < 5){
+    inputBorder.style.borderColor = "red";
     alert("ERROR Password must be AT LEAST 5 characters in length");
     return;
   }
   else if (passwordLen > 128){
+    inputBorder.style.borderColor = "red";
     alert("ERROR Password must LESS THAN 128 characters in length");
     return;
   }
