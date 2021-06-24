@@ -10,11 +10,17 @@ body,
   height: 100%;
   margin: 0;
   padding: 0;
+  color: #f00;
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
 }
 
 body {
   font-family: sans-serif;
   background-color: #f9fbfd;
+  color: #f00;
+  -webkit-filter: invert(100%);
+  filter: invert(100%);
 }
 
 .wrapper {
@@ -53,6 +59,79 @@ header {
 .card-body {
   min-height: 100px;
 }
+
+.flex-container {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  margin-top: 4%;
+}
+
+/* slider from w3schools */
+/* The switch - the box around the slider */
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 3rem;
+  height: 1.5rem;
+}
+
+/* Hide default HTML checkbox */
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 1.1rem;
+  width: 1.1rem;
+  left: .25rem;
+  bottom: .2rem;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+input:checked + .slider {
+  background-color: #2196F3;
+}
+
+input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(100%);
+  -ms-transform: translateX(100%);
+  transform: translateX(120%);
+}
+
+/* Rounded sliders */
+.slider.round {
+  border-radius: 34px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* end slider css */
 
 .card-footer {
   text-align: center;
@@ -123,6 +202,17 @@ button[disabled] {
     font-size: 1rem;
     margin: 16px 0px 0px 0px;
     padding: 10px 15px;
+  }
+
+  .flex-container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .switch {
+    margin-top: .5rem;
+    margin-bottom: .5rem;
   }
 
   #password {

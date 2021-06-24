@@ -5,37 +5,135 @@ var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
 var lowerCase = [ "a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z", ];
 // Array of uppercase characters to be included in password
 var upperCase = [ "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X", "Y", "Z", ];
-//math.random for loop to randomly grab chars concat all selected arrays into one massive array
-// pull out # of chars from concat array length
+// define blank global variable for the generated password array so all functions can r/w
+var generatedPassword= [];
+var passwordText = document.querySelector("#password");
+
 function generatePW() {
+  // create array for included characters
+  var included = [];
+  
   //add validation for user input <5 >128
   var passwordLen = prompt("Enter length of password");
+    if (passwordLen < 5){
+      alert("Password must be AT LEAST 5 characters in length.")
+      return;
+    }
+    else if (passwordLen > 128){
+      alert("Password must LESS THAN 128 characters in length.")
+      return;
+    }
   console.log(passwordLen);
-
   var hasSpecialChars = confirm("Click ok to include Special Characters.");
-  console.log(hasSpecialChars);
+  // if true add these characters to the included array
+  if (hasSpecialChars == true){
+    var included = included.concat(specialChars);
+    console.log(included);}
 
   var hasNumbers = confirm("Click ok to include Numbers.");
-  console.log(hasNumbers);
+  // if true add these characters to the included array
+  if (hasNumbers == true){
+    var included = included.concat(numbers);
+    console.log(included);}
 
   var hasLowerCase = confirm("Click ok to include Lowercase Characters.");
-  console.log(hasLowerCase);
+  // if true add these characters to the included array
+  if (hasLowerCase == true){
+    var included = included.concat(lowerCase);
+    console.log(included);}
 
   var hasUpperCase = confirm("Click ok to include Uppercase Characters.");
-  console.log(hasUpperCase);
+  // if true add these characters to the included array
+  if (hasUpperCase == true){
+    var included = included.concat(upperCase);
+    console.log(included);}
+
+
+  // loop through included characters array *passwordLen* number of times
+  for (let i = 0; i < passwordLen; i++) {
+    // randomly select an index from the array
+    var random = Math.floor(Math.random() * (included.length));
+    console.log(random);
+    // get value of the randomly chosen character and store it
+    var chosenChar = included[random];
+    console.log(chosenChar);
+    // add the randomly chosen character from the included array to the generated password
+    generatedPassword.push(chosenChar);
+  }
+  console.log(generatedPassword);
 }
 
-generatePW();
+// checkbox format instead of prompts
+function altGeneratePW (){
+  var included = [];
+
+  var passwordLen = prompt("Enter length of password");
+  if (passwordLen < 5){
+    alert("Password must be AT LEAST 5 characters in length.")
+    return;
+  }
+  else if (passwordLen > 128){
+    alert("Password must LESS THAN 128 characters in length.")
+    return;
+  }
+  console.log(passwordLen);
+
+  // check to see if special characters checkbox is checked
+  var hasSpecialChars = document.getElementById("SpecialChars");
+  // if checked, add to included characters array
+  if (hasSpecialChars.checked == true){
+    var included = included.concat(specialChars);
+    console.log(included);
+  }
+  // check to see if numbers checkbox is checked
+  var hasNumbers = document.getElementById("Numbers");
+  // if checked, add to included characters array
+  if (hasNumbers.checked == true){
+    var included = included.concat(numbers);
+    console.log(included);
+  }
+  // check to see if numbers checkbox is checked
+  var hasLowerCase = document.getElementById("Lowercase");
+  // if checked, add to included characters array
+  if (hasLowerCase.checked == true){
+    var included = included.concat(lowerCase);
+    console.log(included);
+  }
+  // check to see if numbers checkbox is checked
+  var hasUpperCase = document.getElementById("Uppercase");
+  // if checked, add to included characters array
+  if (hasUpperCase.checked == true){
+    var included = included.concat(upperCase);
+    console.log(included);
+  }
+
+  // loop through included characters array *passwordLen* number of times
+  for (let i = 0; i < passwordLen; i++) {
+    // randomly select an index from the array
+    var random = Math.floor(Math.random() * (included.length));
+    console.log(random);
+    // get value of the randomly chosen character and store it
+    var chosenChar = included[random];
+    console.log(chosenChar);
+    // add the randomly chosen character from the included array to the generated password
+    generatedPassword.push(chosenChar);
+  }
+  console.log(generatedPassword);
+}
+
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
 
 // Write password to the #password input
 function writePassword() {
-  //write this function
-  var password = generatePassword();
-  var passwordText = document.querySelector("#password");
-
+  // first clear the text field on screen
+  passwordText.value = "";
+  // call the generate function
+  altGeneratePW();
+  // remove commas from array x,y,z to xyz
+  var password = generatedPassword.join("");
+  //write generated password to page
   passwordText.value = password;
 
 }
