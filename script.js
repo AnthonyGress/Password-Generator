@@ -1,4 +1,4 @@
-// default check box
+// TODO clear password field when button is clicked or function is called
 
 var specialChars = [ "@", "%", "+", "\\", "/", "'", "!", "#", "$", "^", "?", ":", ",", ")", "(", "}", "{", "]", "[", "~", "-", "_", ".", ];
 // Array of numeric characters to be included in password
@@ -143,7 +143,6 @@ function altGeneratePW (){
   }
   console.log(generatedPassword);
 }
-
 
 // Assignment Code
 var generateBtn = document.querySelector("#generate");
