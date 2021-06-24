@@ -122,6 +122,7 @@ function altGeneratePW (){
     var included = included.concat(upperCase);
     console.log(included);
   }
+  // if none of the character sets are selected, return error
   if (hasSpecialChars.checked != true && hasNumbers.checked != true && hasLowerCase.checked != true && hasUpperCase.checked != true) {
     alert("ERROR You must check at least 1 box");
     return;
