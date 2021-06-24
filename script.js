@@ -1,5 +1,3 @@
-// TODO clear password field when button is clicked or function is called
-
 var specialChars = [ "@", "%", "+", "\\", "/", "'", "!", "#", "$", "^", "?", ":", ",", ")", "(", "}", "{", "]", "[", "~", "-", "_", ".", ];
 // Array of numeric characters to be included in password
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
@@ -11,6 +9,7 @@ var upperCase = [ "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M
 var generatedPassword= [];
 var passwordText = document.querySelector("#password");
 
+// This is the original function using the JS prompts as input for generator
 function generatePW() {
   // create array for included characters
   var included = [];
@@ -65,7 +64,7 @@ function generatePW() {
   console.log(generatedPassword);
 }
 
-// checkbox format instead of prompts
+// This is the updated function using the checkbox values for included char sets instead of prompts
 function altGeneratePW (){
   // create blank array of included char types
   var included = [];
