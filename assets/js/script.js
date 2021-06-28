@@ -83,9 +83,9 @@ function altGeneratePW (){
     return;
   }
   // check to see if password len is between 5-128
-  else if (passwordLen < 5){
+  else if (passwordLen < 8){
     inputBorder.style.borderColor = "red";
-    alert("ERROR Password must be AT LEAST 5 characters in length");
+    alert("ERROR Password must be AT LEAST 8 characters in length");
     return;
   }
   else if (passwordLen > 128){
