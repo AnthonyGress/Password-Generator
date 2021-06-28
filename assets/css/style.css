@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+* {
+  touch-action: manipulation;
+}
+
 :root {
   --primary-color: #161625;
   --secondary-color: #ffffff;
@@ -290,7 +294,7 @@ textarea::placeholder, textarea {
   .btn-md{
     padding: 7px;
     bottom: -12px;
-    background-color: ivory;
+    background-color: ivory !important; 
     z-index: 1;
   }
 
