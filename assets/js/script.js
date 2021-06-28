@@ -16,7 +16,7 @@ function generatePW() {
   // create array for included characters
   var included = [];
   
-  //add validation for user input <5 >128
+  //add validation for user input <8 >128
   var passwordLen = prompt("Enter length of password");
     if (passwordLen < 8){
       alert("Password must be AT LEAST 8 characters in length.")
