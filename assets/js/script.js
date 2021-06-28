@@ -1,6 +1,5 @@
 // add dropdown 5-128?
-// add default placeholder in text input or dropdown
-// add icon
+
 var specialChars = [ "@", "%", "+", "\\", "/", "'", "!", "#", "$", "^", "?", ":", ",", ")", "(", "}", "{", "]", "[", "~", "-", "_", ".", ];
 // Array of numeric characters to be included in password
 var numbers = ["0", "1", "2", "3", "4", "5", "6", "7", "8", "9"];
@@ -19,8 +18,8 @@ function generatePW() {
   
   //add validation for user input <5 >128
   var passwordLen = prompt("Enter length of password");
-    if (passwordLen < 5){
-      alert("Password must be AT LEAST 5 characters in length.")
+    if (passwordLen < 8){
+      alert("Password must be AT LEAST 8 characters in length.")
       return;
     }
     else if (passwordLen > 128){
