@@ -1,4 +1,26 @@
-# Password-Generator
-This is a password generator written in HTML/CSS/JS. This site is live at https://techx-guy.github.io/Password-Generator/
+# Password-Generator [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-<img width="1920" alt="Screen Shot 2021-06-24 at 10 10 53 AM" src="https://user-images.githubusercontent.com/70029654/123277876-7e2d8600-d4d4-11eb-8080-5c8b13d57d64.png">
+## Screenshot
+
+<a href="https://techx-guy.github.io/Password-Generator/" target="_blank"><div align="center"><img width="1920" alt="Password Generator Screenshot" src="https://user-images.githubusercontent.com/70029654/123277876-7e2d8600-d4d4-11eb-8080-5c8b13d57d64.png">
+
+</div></a>
+
+## Live Site [Click Here](https://techx-guy.github.io/Password-Generator/)
+
+## Description
+
+A web app that generates a random secure password with the click of a button. Use any of the toggle switches to make the password stronger or weaker by including more types of characters (numbers, capitals, special characters etc). The password can be up to 128 characters long for maximum security and you can copy the secure password with the click of a button as well.
+
+## License
+
+[MIT License](https://opensource.org/licenses/MIT)
+
+## Collaboration
+
+Please feel free to collaborate with me on this project! Just fork it and submit a well documented pull request.
+
+If you have any questions, please contact me at techx@opayq.com
+
+**This app is strictly for educational purposes only**
+
