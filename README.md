@@ -6,7 +6,7 @@
 
 </div></a>
 
-## Live Site [Click Here](https://techx-guy.github.io/Password-Generator/)
+## Live Site [Click Here](https://anthonygress.github.io/Password-Generator/)
 
 ## Description
 
